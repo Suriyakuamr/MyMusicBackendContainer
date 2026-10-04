@@ -1,4 +1,4 @@
-name: Build and Deploy to Azure Container Apps - mymusicbackendcntr
+name: Build and Deploy to Azure Container Apps
 
 on:
   push:
@@ -23,5 +23,6 @@ jobs:
         uses: azure/container-apps-deploy-action@v1
         with:
           appSourcePath: ${{ github.workspace }}
+          dockerfilePath: 'Dockerfile'
           resourceGroup: 'MyMusicPlatform-rg'
           containerAppName: 'mymusicbackendcntr'
